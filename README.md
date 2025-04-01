@@ -8,11 +8,10 @@ This is an admin panel built in Laravel and Vue.
 | Tech | Version |
 |---|---|
 | Laravel | 12.4.1 |
-Laravel: 12.4.1
-PHP: 8.4.4
-Node: 23.7.0
-NPM: 10.9.2
-Vue: 3.5.13
+| PHP | 8.4.4 | 
+| Node | 23.7.0 | 
+| NPM | 10.9.2 |
+| Vue | 3.5.13 |
 
 ---
 ## How To Contribute

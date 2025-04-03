@@ -41,7 +41,8 @@ class NewPasswordController extends Controller
         ]);
 
         $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
+            $request
+                ->only('email', 'password', 'password_confirmation', 'token'),
             fn ($user) => tap($user)->forceFill([
                 'password' => Hash::make($request->password),
                 'remember_token' => Str::random(60),
@@ -50,6 +51,8 @@ class NewPasswordController extends Controller
 
         return $status === Password::PASSWORD_RESET
             ? to_route('login')->with('status', __($status))
-            : throw ValidationException::withMessages(['email' => [__($status)]]);
+            : throw ValidationException::withMessages([
+                'email' => [__($status)],
+            ]);
     }
 }
